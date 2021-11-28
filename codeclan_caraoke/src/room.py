@@ -5,3 +5,4 @@ class Room:
         self.entry_fee = 2
         self.guest_list = []
         self.song_list = []
+
