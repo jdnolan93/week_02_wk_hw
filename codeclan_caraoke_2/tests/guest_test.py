@@ -1,10 +1,9 @@
 import unittest
-from src.songs import Songs
-from src.guests import Guests
+from src.guest import Guest
 
-class TestGuests(unittest.TestCase):
+class TestGuest(unittest.TestCase):
     def setUp(self):
-        self.guest = Guests("Jamie", "Africa by Toto", 100.0)
+        self.guest = Guest("Jamie", "Africa by Toto", 100.0)
 
     def test_guest_has_name(self):
         self.assertEqual("Jamie", self.guest.name)
@@ -14,5 +13,3 @@ class TestGuests(unittest.TestCase):
 
     def test_guest_has_wallet(self):
         self.assertEqual(100.0, self.guest.wallet)
-
-

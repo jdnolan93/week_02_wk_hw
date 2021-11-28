@@ -5,4 +5,7 @@ class Room:
         self.entry_fee = 2
         self.guest_list = []
         self.song_list = []
+        
+      def add_song(self):
+         self.song_list.append(song)
 
