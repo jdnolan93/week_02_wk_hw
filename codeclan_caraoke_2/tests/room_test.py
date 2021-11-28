@@ -45,7 +45,9 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(1, self.room.count_guests())
 
     def test_can_remove_guest(self):
-        self.room.add_guest(self)
-        self.room.remove_guest(self)
+        self.room.add_guest(self.guest_3)
+        self.room.remove_guest(self.guest_3)
         self.assertEqual(0, self.room.count_guests())
+
+    
 
