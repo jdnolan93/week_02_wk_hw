@@ -3,7 +3,7 @@ class Room:
         self.capacity = capacity
         self.till = till
         self.entry_fee = 2.0
-        self.guests= []
+        self.guests = []
         self.songs = []
 
     def count_songs(self):
@@ -14,3 +14,12 @@ class Room:
 
     def remove_song(self, song):
         self.songs.remove(song)
+
+    def count_guests(self):
+        return len(self.guests)
+
+    def add_guest(self, guest):
+        self.guests.append(guest)
+
+    def remove_guest(self, guest):
+        self.guests.remove(guest)
