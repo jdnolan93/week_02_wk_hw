@@ -2,7 +2,7 @@ class Room:
     def __init__(self, capacity, till):
         self.capacity = capacity
         self.till = till
-        self.entry_fee = 2.0
+        self.admission_fee = 2.0
         self.guests = []
         self.songs = []
 
@@ -24,7 +24,11 @@ class Room:
         return len(self.guests)
 
     def add_guest(self, guest):
-        self.guests.append(guest)
+        capacity = 3
+        if len(self.guests) < capacity:
+             self.guests.append(guest)
+        else:
+            return "Sorry, we're full!"
 
     # def remove_guest(self, guest):  #Realised there would be problem if guest wasn't in list
     #     self.guests.remove(guest)
@@ -33,3 +37,11 @@ class Room:
         for guest_to_remove in self.guests:
             if guest_to_remove == guest:
                 self.guests.remove(guest)
+
+    def take_admission_fee(self, guest, fee):
+        if guest.wallet >= fee:
+            guest.pay_admission(fee)
+            self.till += fee
+
+    
+        
